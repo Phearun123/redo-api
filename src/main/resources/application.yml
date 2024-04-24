@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/redo_db
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+  #  Upload File
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 110MB
+      file-size-threshold: 2KB
+
+file:
+  server-path: D:/upload-files/
+  client-path: /api/v1/image
+  base-url: http://localhost:8000${file.client-path}
+  base-image-url: http://localhost:8000
+
+
+
+rsa:
+  public-key: classpath:certs/public.pem
+  private-key: classpath:certs/private.pem
+
+jwt:
+  expiration: 1d
+
+password:
+  encryption:
+    key: mytestkeyasdddds
+
+server:
+  port: 7000
