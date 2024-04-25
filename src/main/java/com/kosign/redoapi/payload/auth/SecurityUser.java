@@ -27,7 +27,7 @@ public record SecurityUser(UserInfo user) implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getUserName();
+        return user.getUsername();
     }
 
     @Override

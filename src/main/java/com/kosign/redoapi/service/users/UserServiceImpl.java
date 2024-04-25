@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService{
 
         var userExist = userInfoRepository.findByUserName(payload.userName())
                 .orElse(new UserInfo());
-        if (StringUtils.isNotEmpty(userExist.getUserName())) {
+        if (StringUtils.isNotEmpty(userExist.getUsername())) {
             throw new BusinessException(StatusCode.USERNAME_EXISTED);
         }
 
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService{
         }
 
         var user = UserInfo.builder()
-                .userName(payload.userName())
+                .username(payload.userName())
                 .userPassword(rawPassword)
                 .fullName(payload.userFullName())
                 .role(payload.role())
@@ -84,11 +84,11 @@ public class UserServiceImpl implements UserService{
         List<UserResponse> userResponses = usersPage.stream()
                 .map(user -> UserResponse.builder()
                         .id(AuthHelper.getUserId())
-                        .username(user.getUserName())
+                        .username(user.getUsername())
                         .fullName(user.getFullName())
                         .role(user.getRole())
                         .sts(user.getStatus())
-                        .userProfileImg(user.getUserProfileImage())
+                        .userProfileImg(user.getUserProfileImg())
                         .baseUrl(fileInfoConfig.getBaseUrl())
                         .build()).toList();
 
@@ -104,11 +104,11 @@ public class UserServiceImpl implements UserService{
         var user = userInfoRepository.findById(usrId).orElseThrow(()-> new BusinessException(StatusCode.USER_NOT_FOUND));
 
         return UserInfoResponse.builder()
-                .username(user.getUserName())
+                .username(user.getUsername())
                 .fullName(user.getFullName())
                 .role(user.getRole())
                 .sts(user.getStatus())
-                .userProfileImg(user.getUserProfileImage())
+                .userProfileImg(user.getUserProfileImg())
                 .baseUrl(fileInfoConfig.getBaseUrl())
                 .build();
     }

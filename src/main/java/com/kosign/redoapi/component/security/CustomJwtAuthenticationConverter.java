@@ -12,7 +12,6 @@ import org.springframework.security.oauth2.jwt.JwtClaimNames;
 import org.springframework.stereotype.Component;
 
 @Component
-
 public class CustomJwtAuthenticationConverter implements Converter<Jwt, AbstractAuthenticationToken> {
     private final UserInfoRepository userRepository;
 
