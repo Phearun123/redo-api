@@ -1,6 +1,6 @@
 package com.kosign.redoapi.service.auth;
 
-import com.kosign.redoapi.domain.user.UserInfoRepository;
+import com.kosign.redoapi.domain.users.UserInfoRepository;
 import com.kosign.redoapi.payload.auth.SecurityUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

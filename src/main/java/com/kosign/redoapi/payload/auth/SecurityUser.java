@@ -1,7 +1,7 @@
 package com.kosign.redoapi.payload.auth;
 
 
-import com.kosign.redoapi.domain.user.UserInfo;
+import com.kosign.redoapi.domain.users.UserInfo;
 import com.kosign.redoapi.enums.StatusActive;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

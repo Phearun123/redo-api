@@ -1,6 +1,6 @@
 package com.kosign.redoapi.helper;
 
-import com.kosign.redoapi.domain.user.UserInfo;
+import com.kosign.redoapi.domain.users.UserInfo;
 import com.kosign.redoapi.payload.auth.SecurityUser;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

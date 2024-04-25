@@ -1,8 +1,7 @@
 package com.kosign.redoapi.component.security;
 
 
-import com.kosign.redoapi.domain.user.UserInfo;
-import com.kosign.redoapi.domain.user.UserInfoRepository;
+import com.kosign.redoapi.domain.users.UserInfoRepository;
 import com.kosign.redoapi.payload.auth.SecurityUser;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;

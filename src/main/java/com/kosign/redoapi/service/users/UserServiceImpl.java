@@ -1,8 +1,8 @@
 package com.kosign.redoapi.service.users;
 
 import com.kosign.redoapi.common.api.StatusCode;
-import com.kosign.redoapi.domain.user.UserInfo;
-import com.kosign.redoapi.domain.user.UserInfoRepository;
+import com.kosign.redoapi.domain.users.UserInfo;
+import com.kosign.redoapi.domain.users.UserInfoRepository;
 import com.kosign.redoapi.enums.StatusActive;
 import com.kosign.redoapi.exception.BusinessException;
 import com.kosign.redoapi.helper.AuthHelper;
