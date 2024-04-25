@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/ca/v1/settings")
+@RequestMapping("/api/ca/v1/settings/languages")
 @RequiredArgsConstructor
 public class LanguageController extends RedoRestController {
 
     private final LanguageService languageService;
 
-    @GetMapping("/languages")
+    @GetMapping("")
     public ResponseEntity<?> getLanguages(
             @RequestParam(value = "search_value", required = false) String searchValue,
             @RequestParam(value = "page_size", defaultValue = "10", required = false) Integer pageSize,
@@ -42,25 +42,25 @@ public class LanguageController extends RedoRestController {
         return ok(languageService.getLanguage(criteria, pageable));
     }
 
-    @PostMapping("/languages")
+    @PostMapping("")
     public Object createLanguages(@RequestBody @Valid CreateLanguage payload) {
         languageService.createLanguage(payload);
         return ok();
     }
 
-    @PutMapping("languages/{lang_code}")
+    @PutMapping("/{lang_code}")
     public Object updateLanguages(@PathVariable String lang_code, @RequestBody @Valid UpdateLanguageRequest payload) throws Throwable{
         languageService.updateLanguages(lang_code, payload);
         return ok();
     }
 
-    @PatchMapping("/languages/{lang_code}/enable")
+    @PatchMapping("/{lang_code}/enable")
     public Object enableLanguages(@PathVariable String lang_code) throws Throwable{
         languageService.enableLanguage(lang_code);
         return ok();
     }
 
-    @PatchMapping("/languages/{lang_code}/disable")
+    @PatchMapping("/{lang_code}/disable")
     public Object disableLanguages(@PathVariable String lang_code) throws Throwable {
         languageService.disableLanguage(lang_code);
         return ok();

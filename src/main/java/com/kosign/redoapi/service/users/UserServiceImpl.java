@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService{
             if (StringUtils.isNotBlank(searchValue)) {
                 predicates.add(criteriaBuilder.or(
                         criteriaBuilder.like(criteriaBuilder.upper(root.get("fullName")), BaseSpecification.containUpperCase(searchValue)),
-                        criteriaBuilder.like(criteriaBuilder.upper(root.get("userName")), BaseSpecification.containUpperCase(searchValue))
+                        criteriaBuilder.like(criteriaBuilder.upper(root.get("username")), BaseSpecification.containUpperCase(searchValue))
                 ));
             }
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));

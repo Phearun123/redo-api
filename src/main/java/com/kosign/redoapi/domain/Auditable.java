@@ -35,5 +35,4 @@ public abstract class Auditable {
     @Column(insertable = false, name = "chng_by")
     private Long changeBy;
 
-
 }

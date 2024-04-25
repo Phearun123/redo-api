@@ -1,5 +1,7 @@
 package com.kosign.redoapi;
 
+import com.kosign.redoapi.enums.AuthProvider;
+import com.kosign.redoapi.payload.users.CreateUserRequest;
 import com.kosign.redoapi.service.users.UserService;
 import com.kosign.redoapi.utils.PasswordUtils;
 import org.junit.jupiter.api.Test;
@@ -16,8 +18,8 @@ class RedoTests {
         System.err.println("PWD : " + PasswordUtils.encrypt("Aa12345"));
         System.err.println("PWD : " + PasswordUtils.encrypt("Bb12345"));
         System.err.println("PWD : " + PasswordUtils.encrypt("Cc12345"));
-//        UserRequest payload = new UserRequest("Dara","Yvo7fm4YflunXJ8XZHL2BQ==", "DaraRith", AuthProvider.ADMIN);
-//        userService.createUser(payload);
+        CreateUserRequest payload = new CreateUserRequest("Dara","Yvo7fm4YflunXJ8XZHL2BQ==", "DaraRith", AuthProvider.ADMIN);
+        userService.createUser(payload);
     }
 
 }
